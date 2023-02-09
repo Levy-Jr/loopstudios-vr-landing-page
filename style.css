@@ -472,19 +472,21 @@ section {
 }
 
 .see-all-button {
+  font-family: var(--ff-accent);
+  background: none;
+  padding: .5em 2em;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  letter-spacing: 5px;
   border-width: 2px 1px 1px 1px;
   border-style: solid;
   border-color: var(--Black);
-  background: none;
-  padding: 0em 3.25em;
-  font-family: var(--ff-accent);
-  cursor: pointer;
 }
 
 @media (min-width: 50em) {
   .see-all-button {
+    letter-spacing: 5px;
+    padding: 0em 3.25em;
+    cursor: pointer;
     font-weight: bold;
   }
 }
