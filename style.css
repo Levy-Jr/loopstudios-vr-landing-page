@@ -110,8 +110,25 @@ header {
 
 @media (min-width: 37.5em) {
   header {
+    background-image: none;
+  }
+
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, .4);
+    z-index: -1;
+  }
+
+  header::after{
+    content: "";
+    position: absolute;
+    inset: 0;
     background-image: url("images/desktop/image-hero.jpg");
-    background-position: top center;
+    background-position: center;
+    background-size: cover;
+    z-index: -2;
   }
 }
 
@@ -213,7 +230,6 @@ header {
   }
 }
 
-
 @media (min-width: 50em) {
   .header-menu {
     display: flex;
@@ -272,6 +288,10 @@ header {
   margin: 0 auto;
 }
 
+.relative{
+  position: relative;
+}
+
 @media (min-width: 62.5em) {
   .interactive-vr{
     position: relative;
@@ -284,14 +304,20 @@ header {
 
   .text-side {
     background-color: var(--White);
-    align-self: end;
     position: absolute;
-    right: 0;
-    bottom: 2.5rem;
+    min-height: 62.5%;
+    width: 42.5%;
+    
+    right: clamp(0rem, 7vw, 7rem);
+    bottom: 0;
   }
 
-  .text-content{
+  .text-content {
     max-width: 48ch;
+    padding-left: 2rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 
   .image-side,
@@ -392,12 +418,6 @@ section {
   cursor: pointer;
 }
 
-.creation:hover > picture {
-  opacity: .5;
-}
-
-
-
 .creation:hover{
   color: var(--Black);
 }
@@ -420,7 +440,7 @@ section {
   .creation:hover::after{
     height: 100%;
     background-image: none;
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgba(255, 255, 255, .6);
   }
 }
 
@@ -676,10 +696,15 @@ a {
 
 @media (min-width: 50em) {
   .attribution{
-    font-size: 1rem;
+    font-size: .875rem;
   }
 }
 
 .attribution a {
-  color:  #A020F0; font-weight: bold;
+  color:  #A020F0;
+  font-weight: bold;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
 }
